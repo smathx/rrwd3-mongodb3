@@ -15,6 +15,8 @@ class Entrant
   
   embeds_one :race, class_name: "RaceRef"
   
+  embeds_one :racer, as: :parent, class_name: "RacerInfo"
+  
   def the_race
     race.race
   end
