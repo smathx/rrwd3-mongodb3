@@ -23,6 +23,10 @@ class Placing
     when Placing then 
       object.mongoize
       
+    # TODO: Check this - needed to pass flatten_attributes rq03  
+    when String then 
+      Placing.new(object).mongoize
+      
     else
       raise "Unexpected object class '#{object.class.name}' for Placing.mongoize"
       object

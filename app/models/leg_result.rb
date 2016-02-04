@@ -21,4 +21,5 @@ class LegResult
   
   validates :event,
     presence: true
+    
 end
