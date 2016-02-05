@@ -135,3 +135,12 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+# For deployment to mongolab.com 
+
+production:
+  clients:
+    default:
+      uri: <%= ENV[’MONGOLABW3_URI’] %>
+      options:
+        connect_timeout: 15
