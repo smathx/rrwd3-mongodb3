@@ -97,4 +97,7 @@ class Entrant
     end
   end
 
+  scope :upcoming, ->{ where(:"race.date".gte => Date.current) }
+  scope :past, ->{ where(:"race.date".lt => Date.current) }
+  
 end

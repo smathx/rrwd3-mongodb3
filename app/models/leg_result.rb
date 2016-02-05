@@ -4,7 +4,9 @@ class LegResult
   field :secs, type: Float
   
   embedded_in :entrant
-  embeds_one :event, as: :parent
+  
+  embeds_one :event, 
+    as: :parent
   
   def calc_ave
     #subclasses will calc event-specific ave
@@ -21,5 +23,4 @@ class LegResult
   
   validates :event,
     presence: true
-    
 end
