@@ -1,3 +1,5 @@
 mongoimport -h ds055915.mongolab.com:55915 -d rrwd3-triresults -c racers  -u <user> -p <password> --file db/racers.json
 mongoimport -h ds055915.mongolab.com:55915 -d rrwd3-triresults -c races   -u <user> -p <password> --file db/races.json
 mongoimport -h ds055915.mongolab.com:55915 -d rrwd3-triresults -c results -u <user> -p <password> --file db/results.json
+
+https://rrwd3-triresults.herokuapp.com/
