@@ -28,16 +28,10 @@ class Entrant
   def the_race
     race.race
   end
-  
-  #TODO: Something wrong with this bit - not summing ???!?!
+
+  # Ignore result parameter and sum whatever we have.  
   def update_total(result)
-    if result
-      if self.secs
-        self.secs = self.secs + result.secs
-      else
-        self.secs = result.secs
-      end
-    end
+    self.secs = self.results.reduce(0) { |sum,r| sum += r.secs ? r.secs : 0 }
   end
   
   delegate :first_name, :first_name=, to: :racer
