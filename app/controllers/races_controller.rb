@@ -14,12 +14,12 @@ class RacesController < ApplicationController
     #@entrants = Entrant.where(:"race._id"=>@race.id).
     #              order_by(secs: :asc, last_name: :asc, first_name: :asc).to_a
                   
-    @entrants = Entrant.where(:"race._id"=>@race.id).
-                  order_by(secs: :asc).
-                  to_a.
+    @entrants = Entrant.where(:"race._id"=>@race.id).to_a.
                   sort do |a,b|
-                    primary = a.last_name <=> b.last_name
-                    primary == 0 ? a.first_name <=> b.first_name: primary
+                    order = a.secs <=> b.secs
+                    order = a.last_name <=> b.last_name if order == 0
+                    order = a.first_name <=> b.first_name if order == 0
+                    order
                   end
   end
 
